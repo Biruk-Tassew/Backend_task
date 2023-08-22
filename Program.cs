@@ -19,10 +19,24 @@ builder.Services.AddSwaggerGen(c =>
 
 var configuration = builder.Configuration;
 
+
 builder.Services.AddDbContext<SchoolAppContext>(options =>
-    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+{
+   options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
+
+
+// Ensure the database is created and seeded during application startup
+// using (var scope = app.Services.CreateScope())
+// {
+//     var services = scope.ServiceProvider;
+//     var context = services.GetRequiredService<SchoolAppContext>();
+//     context.Database.EnsureCreated();
+// }
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
