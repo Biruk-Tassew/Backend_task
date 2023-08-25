@@ -9,6 +9,7 @@ namespace Data
     {
     }
 
+    public DbSet<Teacher> Students { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
   }
 }
