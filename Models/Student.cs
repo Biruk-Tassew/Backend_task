@@ -3,19 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models
 {
-  public class Teacher
+  public class Student
   {
     [Key]
-    [Column("teacher_id")]
+    [Column("student_id")]
     public int Id { get; set; }
-
     [Column("name")]
     public string Name { get; set; }
-
     [Column("email")]
     public string Email { get; set; }
-
-    [Column("subject")]
-    public string Subject { get; set; }
+    [Column("student_number")]
+    public string StudentNumber { get; set; }
+    [Column("cgpa")]
+    public double CGPA { get; set; }
   }
 }
