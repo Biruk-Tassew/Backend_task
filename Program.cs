@@ -28,10 +28,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    
+
     // Enable Swagger middleware
     app.UseSwagger();
-    
+
     // Configure Swagger UI to open on the default route
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Learning Project v1"));
 }
